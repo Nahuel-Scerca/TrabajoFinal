@@ -1,4 +1,4 @@
-package com.example.trabajofinal;
+package com.example.trabajofinal.ui.login;
 
 import android.app.Application;
 import android.content.Context;
@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
+import com.example.trabajofinal.MainActivity;
 
 public class LoginActivityViewModel extends AndroidViewModel {
 

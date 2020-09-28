@@ -1,4 +1,4 @@
-package com.example.trabajofinal;
+package com.example.trabajofinal.ui.login;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.example.trabajofinal.R;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText correo;
