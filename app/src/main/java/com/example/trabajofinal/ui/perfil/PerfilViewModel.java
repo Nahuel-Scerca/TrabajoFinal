@@ -18,6 +18,15 @@ public class PerfilViewModel extends ViewModel {
     }
 
     public void recuperarPropietario(){
+
         Propietario p = new Propietario();
+        p.setNombre("Nahuel");
+        p.setApellido("Scerca");
+        p.setMail("nahuelsherca@gmail.com");
+        p.setPassword("123");
+        p.setDni("40318407");
+        p.setTelefono("2664243132");
+
+        propietario.setValue(p);
     }
 }

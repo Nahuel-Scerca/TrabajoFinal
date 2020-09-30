@@ -10,6 +10,18 @@ public class Propietario {
     private String dni;
     private String telefono;
 
+    public Propietario(String nombre, String apellido, String mail, String password, String dni, String telefono) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.mail = mail;
+        this.password = password;
+        this.dni = dni;
+        this.telefono = telefono;
+    }
+
+    public Propietario() {
+    }
+
     public int getIdPropietario() {
         return idPropietario;
     }

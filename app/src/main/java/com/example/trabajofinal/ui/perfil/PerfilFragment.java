@@ -79,7 +79,7 @@ public class PerfilFragment extends Fragment {
                 p.setNombre(etNombre.getText().toString());
                 p.setApellido(etApellido.getText().toString());
                 p.setApellido(etPassword.getText().toString());
-                p.setApellido(etMail.getText().toString());
+                      p.setApellido(etMail.getText().toString());
                 p.setApellido(etDni.getText().toString());
                 p.setApellido(etTelefono.getText().toString());
 

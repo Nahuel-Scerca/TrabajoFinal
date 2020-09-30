@@ -12,16 +12,16 @@
         tools:layout="@layout/fragment_perfil" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.trabajofinal.ui.propiedades.GalleryFragment"
-        android:label="@string/menu_propiedades"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_inmueble"
+        android:name="com.example.trabajofinal.ui.inmuebles.InmuebleFragment"
+        android:label="@string/menu_inmueble"
+        tools:layout="@layout/fragment_inmueble" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.trabajofinal.ui.inquilinos.SlideshowFragment"
+        android:id="@+id/nav_inquilino"
+        android:name="com.example.trabajofinal.ui.inquilinos.InquilinoFragment"
         android:label="@string/menu_inquilinos"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_inquilino" />
     <fragment
         android:id="@+id/pagosFragment"
         android:name="com.example.trabajofinal.ui.pagos.PagosFragment"
