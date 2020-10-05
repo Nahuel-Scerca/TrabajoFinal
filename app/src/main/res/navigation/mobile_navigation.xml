@@ -15,13 +15,21 @@
         android:id="@+id/nav_inmueble"
         android:name="com.example.trabajofinal.ui.inmuebles.InmuebleFragment"
         android:label="@string/menu_inmueble"
-        tools:layout="@layout/fragment_inmueble" />
+        tools:layout="@layout/fragment_inmueble" >
+        <action
+            android:id="@+id/action_nav_inmueble_to_inmuebleFragment"
+            app:destination="@id/inmuebleFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_inquilino"
         android:name="com.example.trabajofinal.ui.inquilinos.InquilinoFragment"
         android:label="@string/menu_inquilinos"
-        tools:layout="@layout/fragment_inquilino" />
+        tools:layout="@layout/fragment_inquilino" >
+        <action
+            android:id="@+id/action_nav_inquilino_to_inquilinoUnicoFragment"
+            app:destination="@id/inquilinoUnicoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/pagosFragment"
         android:name="com.example.trabajofinal.ui.pagos.PagosFragment"
@@ -32,4 +40,22 @@
         android:name="com.example.trabajofinal.ui.contratos.ContratoFragment"
         android:label="fragment_contratos"
         tools:layout="@layout/fragment_contratos" />
+    <fragment
+        android:id="@+id/inmuebleFragment"
+        android:name="com.example.trabajofinal.ui.inmuebleUnico.InmuebleUnicoFragment"
+        android:label="fragment_inmueble_unico"
+        tools:layout="@layout/fragment_inmueble_unico" >
+        <action
+            android:id="@+id/action_inmuebleFragment_to_nav_inmueble"
+            app:destination="@id/nav_inmueble" />
+    </fragment>
+    <fragment
+        android:id="@+id/inquilinoUnicoFragment"
+        android:name="com.example.trabajofinal.ui.inquilinoUnico.InquilinoUnicoFragment"
+        android:label="@string/menu_inquilino"
+        tools:layout="@layout/fragment_inquilino_unico" >
+        <action
+            android:id="@+id/action_inquilinoUnicoFragment_to_nav_inquilino"
+            app:destination="@id/nav_inquilino" />
+    </fragment>
 </navigation>
