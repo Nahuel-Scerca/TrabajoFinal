@@ -21,6 +21,26 @@ public class Inmueble implements Serializable {
     public Inmueble() {
     }
 
+    public Inmueble(String direccion , int id) {
+        this.direccion = direccion;
+        this.id=id;
+    }
+
+    public Inmueble(int id, String direccion, int ambientes, String tipo, String uso, double superficie, String latitud, String longitud, double precio, int estado, int propietarioId, int foto) {
+        this.id = id;
+        this.direccion = direccion;
+        this.ambientes = ambientes;
+        this.tipo = tipo;
+        this.uso = uso;
+        this.superficie = superficie;
+        this.latitud = latitud;
+        this.longitud = longitud;
+        this.precio = precio;
+        this.estado = estado;
+        this.propietarioId = propietarioId;
+        this.foto = foto;
+    }
+
     public Inmueble(String direccion, int ambientes, String tipo, String uso, double superficie, String latitud, String longitud, double precio, int estado, int propietarioId, int foto, String archivos) {
         this.direccion = direccion;
         this.ambientes = ambientes;

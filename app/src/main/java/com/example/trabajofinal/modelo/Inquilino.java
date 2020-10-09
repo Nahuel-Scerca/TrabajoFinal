@@ -16,10 +16,21 @@ public class Inquilino implements Serializable {
 
     public Inquilino() {}
 
+
+
     public Inquilino(String dni, String nombre, String apellido, String telefono) {
         Dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.telefono = telefono;
+    }
+
+    public Inquilino(int id, String dni, String nombre, String apellido, String email, String telefono) {
+        this.id = id;
+        Dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
         this.telefono = telefono;
     }
 

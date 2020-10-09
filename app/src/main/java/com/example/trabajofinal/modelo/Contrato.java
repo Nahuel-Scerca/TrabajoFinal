@@ -14,7 +14,17 @@ public class Contrato implements Serializable {
     private Inquilino inquilino;
     private Inmueble inmueble;
 
-    public Contrato() {}
+    public Contrato(int i, Date date, Date date1, int i1, Inquilino inquilino, Inmueble inmueble) {}
+
+    public Contrato(int id, Date fechaDesde, Date fechaHasta, double montoAlquiler,Inquilino inquilino,Inmueble inmueble) {
+        this.id = id;
+        this.fechaDesde = fechaDesde;
+        this.fechaHasta = fechaHasta;
+        this.montoAlquiler = montoAlquiler;
+        this.inquilino = inquilino;
+        this.inmueble = inmueble;
+    }
+
 
     public int getId() {
         return id;

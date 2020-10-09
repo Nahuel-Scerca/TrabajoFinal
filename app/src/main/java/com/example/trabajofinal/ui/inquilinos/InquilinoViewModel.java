@@ -25,10 +25,10 @@ public class InquilinoViewModel extends ViewModel {
 
 
     public void cargarDatos(){
-        lista.add(new Inquilino("403154842", "Nahuel", "Scerca", "2664243132"));
-        lista.add(new Inquilino("23123213", "Hernan", "Gomez", "266448485"));
-        lista.add(new Inquilino("33211332", "Flavio", "Aguilar", "26648798"));
-        lista.add(new Inquilino("1235654567", "Emanuel", "Ferreyra", "2664313131"));
+        lista.add(new Inquilino(1,"403154842", "Nahuel", "Scerca","nahuel@gmail.com", "2664243132"));
+        lista.add(new Inquilino(2,"23123213", "Hernan", "Gomez","hernan@gmail.com", "266448485"));
+        lista.add(new Inquilino(3,"33211332", "Flavio", "Aguilar","fla@gmail.com", "26648798"));
+        lista.add(new Inquilino(4,"1235654567", "Emanuel", "Ferreyra","ema@gmail.com", "2664313131"));
 
         inquilino.setValue(lista);
     }

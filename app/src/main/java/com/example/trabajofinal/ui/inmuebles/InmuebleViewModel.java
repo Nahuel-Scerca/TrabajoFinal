@@ -28,10 +28,10 @@ public class InmuebleViewModel extends ViewModel {
 
 
     public void cargarDatos(){
-        lista.add(new Inmueble("9 de julio 1221", 2,"Departamento", "Domestico", 11111, "123123","2313123",100000, 1, 1, R.drawable.casa1, "String archivos"));
-        lista.add(new Inmueble("jujuy 9", 2,"Departamento", "Domestico", 11111, "123123","2313123",100000, 1, 1, R.drawable.casa1, "String archivos"));
-        lista.add(new Inmueble("balcarce 1212", 2,"Departamento", "Domestico", 11111, "123123","2313123",100000, 1, 1, R.drawable.casa2, "String archivos"));
-        lista.add(new Inmueble("yapeyu 123", 2,"Departamento", "Domestico", 11111, "123123","2313123",100000, 1, 1, R.drawable.casa3, "String archivos"));
+        lista.add(new Inmueble(1,"9 de julio 1221", 2,"Departamento", "Domestico", 11111, "123123","2313123",100000, 1, 1, R.drawable.casa1));
+        lista.add(new Inmueble(2,"jujuy 9", 2,"Departamento", "Domestico", 11111, "123123","2313123",100000, 1, 1, R.drawable.casa1));
+        lista.add(new Inmueble(3,"balcarce 1212", 2,"Departamento", "Domestico", 11111, "123123","2313123",100000, 1, 1, R.drawable.casa2));
+        lista.add(new Inmueble(4,"yapeyu 123", 2,"Departamento", "Domestico", 11111, "123123","2313123",100000, 1, 1, R.drawable.casa3));
 
         inmueble.setValue(lista);
     }

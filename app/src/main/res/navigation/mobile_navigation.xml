@@ -39,7 +39,11 @@
         android:id="@+id/contratoFragment"
         android:name="com.example.trabajofinal.ui.contratos.ContratoFragment"
         android:label="fragment_contratos"
-        tools:layout="@layout/fragment_contratos" />
+        tools:layout="@layout/fragment_contratos" >
+        <action
+            android:id="@+id/action_contratoFragment_to_contrato_unico"
+            app:destination="@id/contrato_unico" />
+    </fragment>
     <fragment
         android:id="@+id/inmuebleFragment"
         android:name="com.example.trabajofinal.ui.inmuebleUnico.InmuebleUnicoFragment"
@@ -57,5 +61,14 @@
         <action
             android:id="@+id/action_inquilinoUnicoFragment_to_nav_inquilino"
             app:destination="@id/nav_inquilino" />
+    </fragment>
+    <fragment
+        android:id="@+id/contrato_unico"
+        android:name="com.example.trabajofinal.contrato_unico"
+        android:label="fragment_contrato_unico"
+        tools:layout="@layout/fragment_contrato_unico" >
+        <action
+            android:id="@+id/action_contrato_unico_to_contratoFragment"
+            app:destination="@id/contratoFragment" />
     </fragment>
 </navigation>

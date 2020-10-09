@@ -23,7 +23,6 @@ public class InquilinoUnicoFragment extends Fragment {
 
     private InquilinoUnicoViewModel inquilinoUnicoViewModel;
     private TextView tvnombre,tvApellido,tvTelefono,tvEmail;
-    private CheckBox cbEstado;
     private ImageView ivImagenInquilino;
 
 
