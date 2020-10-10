@@ -24,6 +24,7 @@
         android:id="@+id/imageView3"
         android:layout_width="0dp"
         android:layout_height="287dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="96dp"
         android:src="@drawable/comprobante"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +47,7 @@
     <TextView
         android:id="@+id/tvMonto"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="19dp"
         android:layout_marginTop="48dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/tvInquilino"
