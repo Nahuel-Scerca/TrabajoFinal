@@ -16,7 +16,11 @@ public class Inquilino implements Serializable {
 
     public Inquilino() {}
 
-
+    public Inquilino(String dni, String nombre, String apellido) {
+        Dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
 
     public Inquilino(String dni, String nombre, String apellido, String telefono) {
         Dni = dni;

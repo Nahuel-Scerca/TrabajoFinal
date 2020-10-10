@@ -34,7 +34,11 @@
         android:id="@+id/pagosFragment"
         android:name="com.example.trabajofinal.ui.pagos.PagosFragment"
         android:label="fragment_pagos"
-        tools:layout="@layout/fragment_pagos" />
+        tools:layout="@layout/fragment_pagos" >
+        <action
+            android:id="@+id/action_pagosFragment_to_pago_unico"
+            app:destination="@id/pago_unico" />
+    </fragment>
     <fragment
         android:id="@+id/contratoFragment"
         android:name="com.example.trabajofinal.ui.contratos.ContratoFragment"
@@ -64,11 +68,20 @@
     </fragment>
     <fragment
         android:id="@+id/contrato_unico"
-        android:name="com.example.trabajofinal.contrato_unico"
+        android:name="com.example.trabajofinal.ui.contratoUnico.contrato_unico"
         android:label="fragment_contrato_unico"
         tools:layout="@layout/fragment_contrato_unico" >
         <action
             android:id="@+id/action_contrato_unico_to_contratoFragment"
             app:destination="@id/contratoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pago_unico"
+        android:name="com.example.trabajofinal.ui.pagoUnico.pago_unico"
+        android:label="fragment_pago_unico"
+        tools:layout="@layout/fragment_pago_unico" >
+        <action
+            android:id="@+id/action_pago_unico_to_pagosFragment"
+            app:destination="@id/pagosFragment" />
     </fragment>
 </navigation>

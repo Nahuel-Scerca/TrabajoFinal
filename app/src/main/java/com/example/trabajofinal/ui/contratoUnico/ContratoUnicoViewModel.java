@@ -1,4 +1,4 @@
-package com.example.trabajofinal;
+package com.example.trabajofinal.ui.contratoUnico;
 
 import android.os.Bundle;
 

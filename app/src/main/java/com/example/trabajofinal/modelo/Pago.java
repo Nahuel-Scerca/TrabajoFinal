@@ -10,9 +10,16 @@ public class Pago implements Serializable {
     private int idContrato;
     private Contrato contrato;
     private double importe;
-    private Date fechaDePago;
+    private String fechaDePago;
 
     private Pago() {}
+
+    public Pago(int id, int numero, Contrato contrato,  String fechaDePago) {
+        this.id = id;
+        this.numero = numero;
+        this.contrato = contrato;
+        this.fechaDePago = fechaDePago;
+    }
 
     public int getId() {
         return id;
@@ -54,11 +61,11 @@ public class Pago implements Serializable {
         this.importe = importe;
     }
 
-    public Date getFechaDePago() {
+    public String getFechaDePago() {
         return fechaDePago;
     }
 
-    public void setFechaDePago(Date fechaDePago) {
+    public void setFechaDePago(String fechaDePago) {
         this.fechaDePago = fechaDePago;
     }
 }

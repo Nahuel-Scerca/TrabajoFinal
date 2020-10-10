@@ -30,6 +30,7 @@ import com.example.trabajofinal.ui.inmuebles.InmuebleViewModel;
 import com.example.trabajofinal.ui.inmuebles.ListaAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContratoFragment extends Fragment {
 
@@ -38,7 +39,7 @@ public class ContratoFragment extends Fragment {
     private  ArrayList<Contrato> lista;
     private InmuebleViewModel vm;
     private ContratoViewModel vmc;
-    private ArrayList<Contrato> arrayListContrato;
+    private List<Contrato>  arrayListContrato;
     ArrayAdapter<Inmueble> adapter;
     Context context;
 
@@ -63,8 +64,7 @@ public class ContratoFragment extends Fragment {
             @Override
             public void onChanged(ArrayList arrayList) {
                 arrayListContrato = arrayList;
-                Log.d("Salida", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  "+arrayListContrato.size()+"");
-            }
+                  }
         });
         vmc.cargarDatos();
 
@@ -83,18 +83,14 @@ public class ContratoFragment extends Fragment {
                         Inmueble inmueble = adapter.getItem(i);
                         Log.d("Salida", "eSTE ES EL ID INMUEBELE"+inmueble.getId()+"");
 
-                        for (int it = 0; it < 4; it++){
+                        for (int it = 0; it < arrayListContrato.size(); it++){
                             Contrato contrato = arrayListContrato.get(it);
-                            if(inmueble.getId() == contrato.getIdInmueble()){
+                            if(inmueble.getId() == contrato.getInmueble().getId()){
                                 bundle.putSerializable("contrato", contrato);
                             }
 
                         }
 
-
-                        Contrato contrato = arrayListContrato.get(1);
-                        Log.d("Salida", "ESTE ES EL ID CONTRATO"+contrato.getId()+"");
-                        bundle.putSerializable("contrato", contrato);
                         Navigation.findNavController(getActivity(), R.id.nav_host_fragment).navigate(R.id.contrato_unico, bundle);
                     }
                 });

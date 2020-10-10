@@ -6,17 +6,18 @@ import java.util.Date;
 public class Contrato implements Serializable {
 
     private int id;
-    private Date fechaDesde;
-    private Date fechaHasta;
+    private String fechaDesde;
+    private String fechaHasta;
     private double montoAlquiler;
     private int idInquilino;
     private int idInmueble;
     private Inquilino inquilino;
     private Inmueble inmueble;
 
-    public Contrato(int i, Date date, Date date1, int i1, Inquilino inquilino, Inmueble inmueble) {}
 
-    public Contrato(int id, Date fechaDesde, Date fechaHasta, double montoAlquiler,Inquilino inquilino,Inmueble inmueble) {
+
+
+    public Contrato(int id, String fechaDesde, String fechaHasta, double montoAlquiler,Inquilino inquilino,Inmueble inmueble) {
         this.id = id;
         this.fechaDesde = fechaDesde;
         this.fechaHasta = fechaHasta;
@@ -34,19 +35,19 @@ public class Contrato implements Serializable {
         this.id = id;
     }
 
-    public Date getFechaDesde() {
+    public String getFechaDesde() {
         return fechaDesde;
     }
 
-    public void setFechaDesde(Date fechaDesde) {
+    public void setFechaDesde(String fechaDesde) {
         this.fechaDesde = fechaDesde;
     }
 
-    public Date getFechaHasta() {
+    public String getFechaHasta() {
         return fechaHasta;
     }
 
-    public void setFechaHasta(Date fechaHasta) {
+    public void setFechaHasta(String fechaHasta) {
         this.fechaHasta = fechaHasta;
     }
 

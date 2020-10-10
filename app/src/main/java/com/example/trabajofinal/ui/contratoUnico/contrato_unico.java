@@ -1,8 +1,7 @@
-package com.example.trabajofinal;
+package com.example.trabajofinal.ui.contratoUnico;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -16,15 +15,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.trabajofinal.R;
 import com.example.trabajofinal.modelo.Contrato;
-import com.example.trabajofinal.modelo.Inmueble;
-import com.example.trabajofinal.ui.inmuebleUnico.InmuebleUnicoViewModel;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class contrato_unico extends Fragment {
 
     private Context context;
     private TextView tvContratoId,tvDireccion,tvMonto,tvDesde,tvHasta,tvInquilino;
     private ContratoUnicoViewModel contratoViewModel;
+    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     private ContratoUnicoViewModel mViewModel;
 
@@ -53,13 +55,12 @@ public class contrato_unico extends Fragment {
             @Override
             public void onChanged(Contrato contrato) {
                 tvContratoId.setText(contrato.getId() + "");
-                /*
                 tvDireccion.setText(contrato.getInmueble().getDireccion());
                 tvMonto.setText(contrato.getMontoAlquiler()+"");
-                tvDesde.setText((CharSequence) contrato.getFechaDesde());
-                tvHasta.setText(contrato.getFechaHasta()+"");
+                tvDesde.setText(contrato.getFechaDesde());
+                tvHasta.setText(contrato.getFechaHasta());
                 tvInquilino.setText(contrato.getInquilino().getNombre() +" "+ contrato.getInquilino().getApellido());
-                 */
+
             }
         });
         contratoViewModel.cargarContrato(getArguments());
