@@ -1,6 +1,9 @@
 package com.example.trabajofinal.ui.inmuebles;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +13,15 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 
 import com.example.trabajofinal.R;
 import com.example.trabajofinal.modelo.Inmueble;
 
 import java.util.List;
+
+import static android.icu.lang.UCharacter.toUpperCase;
 
 public class ListaAdapter extends ArrayAdapter<Inmueble> {
 
@@ -40,13 +47,24 @@ public class ListaAdapter extends ArrayAdapter<Inmueble> {
         }
         Inmueble inmueble= lista.get(position);
         ImageView foto = itemView.findViewById(R.id.ivPerfil);
-        foto.setImageResource(inmueble.getFoto());
+
+        Resources res = context.getResources();
+        Bitmap src = BitmapFactory.decodeResource(res, inmueble.getFoto());
+        RoundedBitmapDrawable dr = RoundedBitmapDrawableFactory.create(res, src);
+        dr.setCornerRadius(100.0f);
+        foto.setImageDrawable(dr);
+
 
         TextView direccion= itemView.findViewById(R.id.tv1);
-        direccion.setText(inmueble.getDireccion());
+        direccion.setText("Direccion: "+ inmueble.getDireccion());
 
         TextView precio = itemView.findViewById(R.id.tv2);
-        precio.setText(inmueble.getPrecio()+"");
+        precio.setText("Monto: $ "+inmueble.getPrecio());
+
+        TextView tipo = itemView.findViewById(R.id.tv3);
+        tipo.setText("Tipo: "+inmueble.getTipo());
+
+
 
         return itemView;
 

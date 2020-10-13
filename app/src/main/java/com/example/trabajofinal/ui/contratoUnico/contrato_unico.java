@@ -24,7 +24,7 @@ import java.text.SimpleDateFormat;
 public class contrato_unico extends Fragment {
 
     private Context context;
-    private TextView tvContratoId,tvDireccion,tvMonto,tvDesde,tvHasta,tvInquilino;
+    private TextView tvContratoId,tvDireccion,tvMonto,tvDesde,tvHasta,tvInquilino,tvTexto;
     private ContratoUnicoViewModel contratoViewModel;
     DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -50,17 +50,19 @@ public class contrato_unico extends Fragment {
         tvDesde = view.findViewById(R.id.tvDesde);
         tvHasta = view.findViewById(R.id.tvHasta);
         tvInquilino = view.findViewById(R.id.tvInquilino);
+        tvTexto= view.findViewById(R.id.tvTexto);
         contratoViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(ContratoUnicoViewModel.class);
         contratoViewModel.getContrato().observe(getActivity(), new Observer<Contrato>() {
             @Override
             public void onChanged(Contrato contrato) {
-                tvContratoId.setText(contrato.getId() + "");
-                tvDireccion.setText(contrato.getInmueble().getDireccion());
-                tvMonto.setText(contrato.getMontoAlquiler()+"");
+                tvContratoId.setText("Nº"+contrato.getId() + "");
+                tvDireccion.setText("Ubicado en la calle "+contrato.getInmueble().getDireccion());
+                tvMonto.setText("Mensualmente se abonaran: "+contrato.getMontoAlquiler()+"");
                 tvDesde.setText(contrato.getFechaDesde());
                 tvHasta.setText(contrato.getFechaHasta());
-                tvInquilino.setText(contrato.getInquilino().getNombre() +" "+ contrato.getInquilino().getApellido());
+                tvInquilino.setText("El Sr/a "+contrato.getInquilino().getNombre() +" "+ contrato.getInquilino().getApellido());
 
+                tvTexto.setText("REUNIDOS por el motivo de Alquiler del Inmueble ubicado en San Luis calle: "+contrato.getInmueble().getDireccion()+" , el cual sera ocupado por el Inquilino "+contrato.getInquilino().getNombre() +" "+ contrato.getInquilino().getApellido()+" a un Monto mensual de "+contrato.getMontoAlquiler()+" Que por VALIDADO el acuerdo de ambas partes el dia de la fecha "+contrato.getFechaDesde()+". Sin mas motivo alguno . ");
             }
         });
         contratoViewModel.cargarContrato(getArguments());

@@ -61,6 +61,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etContraseña"
         app:layout_constraintVertical_bias="0.158"
-        android:background="@drawable/bt_borde_redondeado"/>
+        android:background="@drawable/border_titulo"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

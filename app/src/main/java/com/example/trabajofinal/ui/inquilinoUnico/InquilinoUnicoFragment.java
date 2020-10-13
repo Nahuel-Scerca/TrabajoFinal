@@ -1,8 +1,13 @@
 package com.example.trabajofinal.ui.inquilinoUnico;
 
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,7 +27,7 @@ import com.example.trabajofinal.modelo.Inquilino;
 public class InquilinoUnicoFragment extends Fragment {
 
     private InquilinoUnicoViewModel inquilinoUnicoViewModel;
-    private TextView tvnombre,tvApellido,tvTelefono,tvEmail;
+    private TextView tvnombre,tvTelefono,tvEmail,tvDni,tvInmueble;
     private ImageView ivImagenInquilino;
 
 
@@ -37,8 +42,11 @@ public class InquilinoUnicoFragment extends Fragment {
     private void inicializar(View view) {
         tvnombre = view.findViewById(R.id.tvNombre);
         tvEmail = view.findViewById(R.id.tvEmail);
-        tvApellido = view.findViewById(R.id.tvApellido);
         tvTelefono = view.findViewById(R.id.tvTelefono);
+        tvDni = view.findViewById(R.id.tvDni);
+        tvInmueble = view.findViewById(R.id.tvInmueble);
+        ivImagenInquilino = view.findViewById(R.id.ivImagenInquilino);
+
         ivImagenInquilino = view.findViewById(R.id.ivImagenInquilino);
         ivImagenInquilino.setImageResource(R.drawable.inquilinoview);
 
@@ -47,10 +55,19 @@ public class InquilinoUnicoFragment extends Fragment {
         inquilinoUnicoViewModel.getInquilino().observe(getActivity(), new Observer<Inquilino>() {
             @Override
             public void onChanged(Inquilino inquilino) {
-                tvnombre.setText(inquilino.getNombre());
-                tvApellido.setText(inquilino.getApellido());
-                tvTelefono.setText(inquilino.getTelefono());
-                tvEmail.setText(inquilino.getEmail());
+
+                tvnombre.setText(inquilino.getNombre()+" "+ inquilino.getApellido());
+                tvTelefono.setText("Telefono: "+inquilino.getTelefono());
+                tvEmail.setText("E-mail: "+inquilino.getEmail());
+                tvDni.setText("Dni: "+inquilino.getDni());
+                tvInmueble.setText("Direccion: "+inquilino.getInmueble().getDireccion());
+
+
+                Resources res = getResources();
+                Bitmap src = BitmapFactory.decodeResource(res,R.drawable.inquilinoview );
+                RoundedBitmapDrawable dr = RoundedBitmapDrawableFactory.create(res, src);
+                dr.setCornerRadius(100.0f);
+                ivImagenInquilino.setImageDrawable(dr);
 
             }
         });

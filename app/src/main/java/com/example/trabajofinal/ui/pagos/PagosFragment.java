@@ -90,8 +90,7 @@ public class PagosFragment extends Fragment {
 
                         for (int it = 0; it < arrayListPagos.size(); it++){
                             Pago pago = arrayListPagos.get(it);
-                            Log.d("Salida", "===============inmueble ID"+inmueble.getId()+" ººººººº"+"pagoinmuebleId: "+pago.getContrato().getInmueble().getId());
-                            Log.d("Salida",listaDePagos+"");
+
                             if(inmueble.getId() == pago.getContrato().getInmueble().getId()){
 
                                 listaDePagos.add(pago);

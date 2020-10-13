@@ -13,6 +13,7 @@ public class Inquilino implements Serializable {
     private String nombreGarante;
     private String telefonoGarante;
     private String DniGarante;
+    private Inmueble inmueble;
 
     public Inquilino() {}
 
@@ -29,6 +30,15 @@ public class Inquilino implements Serializable {
         this.telefono = telefono;
     }
 
+    public Inquilino(int id, String dni, String nombre, String apellido, String email, String telefono,Inmueble Inmueble) {
+        this.id = id;
+        Dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.telefono = telefono;
+        this.inmueble= Inmueble;
+    }
     public Inquilino(int id, String dni, String nombre, String apellido, String email, String telefono) {
         this.id = id;
         Dni = dni;
@@ -36,7 +46,9 @@ public class Inquilino implements Serializable {
         this.apellido = apellido;
         this.email = email;
         this.telefono = telefono;
+
     }
+
 
     public Inquilino(String dni, String nombre, String apellido, String email, String telefono, String nombreGarante, String telefonoGarante, String dniGarante) {
         Dni = dni;
@@ -47,6 +59,14 @@ public class Inquilino implements Serializable {
         this.nombreGarante = nombreGarante;
         this.telefonoGarante = telefonoGarante;
         DniGarante = dniGarante;
+    }
+
+    public Inmueble getInmueble() {
+        return inmueble;
+    }
+
+    public void setInmueble(Inmueble inmueble) {
+        this.inmueble = inmueble;
     }
 
     public int getId() {

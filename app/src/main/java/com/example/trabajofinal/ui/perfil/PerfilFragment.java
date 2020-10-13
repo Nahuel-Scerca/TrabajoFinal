@@ -33,14 +33,22 @@ public class PerfilFragment extends Fragment {
     }
 
     private void inicializar(View view){
-        etApellido= view.findViewById(R.id.etNombre);
+        etApellido= view.findViewById(R.id.etApellido);
         etNombre= view.findViewById(R.id.etNombre);
-        etPassword= view.findViewById(R.id.etNombre);
-        etMail= view.findViewById(R.id.etNombre);
-        etDni= view.findViewById(R.id.etNombre);
-        etTelefono= view.findViewById(R.id.etNombre);
+        etPassword= view.findViewById(R.id.etPassword);
+        etMail= view.findViewById(R.id.etMail);
+        etDni= view.findViewById(R.id.etDni);
+        etTelefono= view.findViewById(R.id.etTelefono);
         btGuardar = view.findViewById(R.id.btGuardar);
         btEditar= view.findViewById(R.id.btEditar);
+
+        etApellido.setEnabled(false);
+        etNombre.setEnabled(false);
+        etPassword.setEnabled(false);
+        etMail.setEnabled(false);
+        etDni.setEnabled(false);
+        etTelefono.setEnabled(false);
+
 
         vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(PerfilViewModel.class);
 
@@ -79,9 +87,16 @@ public class PerfilFragment extends Fragment {
                 p.setNombre(etNombre.getText().toString());
                 p.setApellido(etApellido.getText().toString());
                 p.setApellido(etPassword.getText().toString());
-                      p.setApellido(etMail.getText().toString());
+                p.setApellido(etMail.getText().toString());
                 p.setApellido(etDni.getText().toString());
                 p.setApellido(etTelefono.getText().toString());
+
+                etApellido.setEnabled(false);
+                etNombre.setEnabled(false);
+                etPassword.setEnabled(false);
+                etMail.setEnabled(false);
+                etDni.setEnabled(false);
+                etTelefono.setEnabled(false);
 
                 btEditar.setVisibility(View.VISIBLE);
                 btGuardar.setVisibility(View.GONE);

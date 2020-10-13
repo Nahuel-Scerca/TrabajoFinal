@@ -48,10 +48,11 @@ public class ListAdapter extends ArrayAdapter<Pago> {
         monto.setText(pago.getContrato().getMontoAlquiler()+"");
 
         TextView inquilino = itemView.findViewById(R.id.tvInquilino);
-        inquilino.setText(pago.getContrato().getInquilino().getNombre()+"");
+        inquilino.setText("El Inquilino/a "+pago.getContrato().getInquilino().getNombre()+" "+pago.getContrato().getInquilino().getApellido());
 
         TextView concepto = itemView.findViewById(R.id.tvConcepto);
-        concepto.setText(pago.getContrato().getInmueble().getDireccion()+"");
+        concepto.setText("Pago mensual del Inmueble "+pago.getContrato().getInmueble().getDireccion()+"");
+
 
         return itemView;
 

@@ -43,7 +43,10 @@ public class Adapter extends ArrayAdapter<Inquilino> {
         foto.setImageResource(R.drawable.inquilino);
 
         TextView nombre= itemView.findViewById(R.id.tvNombre);
-        nombre.setText(inquilino.getNombre()+inquilino.getApellido());
+        nombre.setText(inquilino.getNombre()+"  "+inquilino.getApellido());
+
+        TextView inmueble= itemView.findViewById(R.id.tvInmueble);
+        inmueble.setText("Inmueble: "+inquilino.getInmueble().getDireccion());
 
 
         return itemView;

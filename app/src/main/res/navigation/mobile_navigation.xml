@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/pagosFragment"
         android:name="com.example.trabajofinal.ui.pagos.PagosFragment"
-        android:label="fragment_pagos"
+        android:label="@string/menu_pagos"
         tools:layout="@layout/fragment_pagos" >
         <action
             android:id="@+id/action_pagosFragment_to_pago_unico"
@@ -42,7 +42,7 @@
     <fragment
         android:id="@+id/contratoFragment"
         android:name="com.example.trabajofinal.ui.contratos.ContratoFragment"
-        android:label="fragment_contratos"
+        android:label="@string/menu_contratos"
         tools:layout="@layout/fragment_contratos" >
         <action
             android:id="@+id/action_contratoFragment_to_contrato_unico"
@@ -51,7 +51,7 @@
     <fragment
         android:id="@+id/inmuebleFragment"
         android:name="com.example.trabajofinal.ui.inmuebleUnico.InmuebleUnicoFragment"
-        android:label="fragment_inmueble_unico"
+        android:label="@string/menu_inmueble"
         tools:layout="@layout/fragment_inmueble_unico" >
         <action
             android:id="@+id/action_inmuebleFragment_to_nav_inmueble"
@@ -69,7 +69,7 @@
     <fragment
         android:id="@+id/contrato_unico"
         android:name="com.example.trabajofinal.ui.contratoUnico.contrato_unico"
-        android:label="fragment_contrato_unico"
+        android:label="Contrato"
         tools:layout="@layout/fragment_contrato_unico" >
         <action
             android:id="@+id/action_contrato_unico_to_contratoFragment"
@@ -78,10 +78,15 @@
     <fragment
         android:id="@+id/pago_unico"
         android:name="com.example.trabajofinal.ui.pagoUnico.pago_unico"
-        android:label="fragment_pago_unico"
+        android:label="@string/menu_pagos"
         tools:layout="@layout/fragment_pago_unico" >
         <action
             android:id="@+id/action_pago_unico_to_pagosFragment"
             app:destination="@id/pagosFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/salir"
+        android:name="com.example.trabajofinal.salir"
+        android:label="Salir"
+        tools:layout="@layout/salir_fragment" />
 </navigation>
