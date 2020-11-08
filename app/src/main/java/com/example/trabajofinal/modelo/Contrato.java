@@ -6,22 +6,30 @@ import java.util.Date;
 public class Contrato implements Serializable {
 
     private int id;
-    private String fechaDesde;
-    private String fechaHasta;
-    private double montoAlquiler;
-    private int idInquilino;
-    private int idInmueble;
+    private Date fechaDesde;
+    private Date fechaHasta;
+    private double precioMensual;
+    private int inquilinoId;
+    private int inmuebleId;
     private Inquilino inquilino;
     private Inmueble inmueble;
 
-
-
-
-    public Contrato(int id, String fechaDesde, String fechaHasta, double montoAlquiler,Inquilino inquilino,Inmueble inmueble) {
+    public Contrato(int id, Date fechaDesde, Date fechaHasta, double precioMensual, int inquilinoId, int inmuebleId, Inquilino inquilino, Inmueble inmueble) {
         this.id = id;
         this.fechaDesde = fechaDesde;
         this.fechaHasta = fechaHasta;
-        this.montoAlquiler = montoAlquiler;
+        this.precioMensual = precioMensual;
+        this.inquilinoId = inquilinoId;
+        this.inmuebleId = inmuebleId;
+        this.inquilino = inquilino;
+        this.inmueble = inmueble;
+    }
+
+    public Contrato(int id, Date fechaDesde, Date fechaHasta, double precioMensual, Inquilino inquilino, Inmueble inmueble) {
+        this.id = id;
+        this.fechaDesde = fechaDesde;
+        this.fechaHasta = fechaHasta;
+        this.precioMensual = precioMensual;
         this.inquilino = inquilino;
         this.inmueble = inmueble;
     }
@@ -35,44 +43,44 @@ public class Contrato implements Serializable {
         this.id = id;
     }
 
-    public String getFechaDesde() {
+    public Date getFechaDesde() {
         return fechaDesde;
     }
 
-    public void setFechaDesde(String fechaDesde) {
+    public void setFechaDesde(Date fechaDesde) {
         this.fechaDesde = fechaDesde;
     }
 
-    public String getFechaHasta() {
+    public Date getFechaHasta() {
         return fechaHasta;
     }
 
-    public void setFechaHasta(String fechaHasta) {
+    public void setFechaHasta(Date fechaHasta) {
         this.fechaHasta = fechaHasta;
     }
 
-    public double getMontoAlquiler() {
-        return montoAlquiler;
+    public double getPrecioMensual() {
+        return precioMensual;
     }
 
-    public void setMontoAlquiler(double montoAlquiler) {
-        this.montoAlquiler = montoAlquiler;
+    public void setPrecioMensual(double precioMensual) {
+        this.precioMensual = precioMensual;
     }
 
-    public int getIdInquilino() {
-        return idInquilino;
+    public int getInquilinoId() {
+        return inquilinoId;
     }
 
-    public void setIdInquilino(int idInquilino) {
-        this.idInquilino = idInquilino;
+    public void setInquilinoId(int inquilinoId) {
+        this.inquilinoId = inquilinoId;
     }
 
-    public int getIdInmueble() {
-        return idInmueble;
+    public int getInmuebleId() {
+        return inmuebleId;
     }
 
-    public void setIdInmueble(int idInmueble) {
-        this.idInmueble = idInmueble;
+    public void setInmuebleId(int inmuebleId) {
+        this.inmuebleId = inmuebleId;
     }
 
     public Inquilino getInquilino() {

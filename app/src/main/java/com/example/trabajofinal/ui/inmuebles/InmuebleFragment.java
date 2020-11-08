@@ -24,6 +24,7 @@ import com.example.trabajofinal.modelo.Inmueble;
 import com.example.trabajofinal.ui.inmuebleUnico.InmuebleUnicoFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class InmuebleFragment extends Fragment {
 
@@ -48,10 +49,10 @@ public class InmuebleFragment extends Fragment {
         lvLista = view.findViewById(R.id.lvLista);
         vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InmuebleViewModel.class);
 
-        vm.getInmueble().observe(getViewLifecycleOwner(), new Observer<ArrayList>() {
+        vm.getInmueble().observe(getViewLifecycleOwner(), new Observer<List>() {
             @Override
-            public void onChanged(ArrayList arrayList) {
-                 adapter= new ListaAdapter(context,R.layout.item,arrayList,getLayoutInflater());
+            public void onChanged(List list) {
+                adapter= new ListaAdapter(context,R.layout.item,list,getLayoutInflater());
                 lvLista.setAdapter(adapter);
 
                 lvLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -68,7 +69,7 @@ public class InmuebleFragment extends Fragment {
             }
         });
 
-        vm.cargarDatos();
+        vm.obtenerInmuebles();
 
 
     }

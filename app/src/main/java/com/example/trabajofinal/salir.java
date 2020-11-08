@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -45,6 +46,8 @@ public class salir extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         System.exit(0);
+                        SharedPreferences sh= getContext().getSharedPreferences("datos",0);
+                        //sh. (Eliminar las preferencias)
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {

@@ -9,14 +9,16 @@ public class Inmueble implements Serializable {
     private int ambientes;
     private String tipo;
     private String uso;
-    private double superficie;
-    private String latitud;
-    private String longitud;
+    private int superficie;
+    private double latitud;
+    private double longitud;
     private double precio;
     private int estado;
     private int propietarioId;
-    private int foto;
-    private String archivos;
+    private Propietario duenio;
+    private String foto;
+    private String estadoNombre;
+//    private String archivos;
 
     public Inmueble() {
     }
@@ -26,7 +28,24 @@ public class Inmueble implements Serializable {
         this.id=id;
     }
 
-    public Inmueble(int id, String direccion, int ambientes, String tipo, String uso, double superficie, String latitud, String longitud, double precio, int estado, int propietarioId, int foto) {
+    public Inmueble(int id, String direccion, int ambientes, String tipo, String uso, int superficie, double latitud, double longitud, double precio, int estado, int propietarioId, Propietario duenio, String foto, String estadoNombre) {
+        this.id = id;
+        this.direccion = direccion;
+        this.ambientes = ambientes;
+        this.tipo = tipo;
+        this.uso = uso;
+        this.superficie = superficie;
+        this.latitud = latitud;
+        this.longitud = longitud;
+        this.precio = precio;
+        this.estado = estado;
+        this.propietarioId = propietarioId;
+        this.duenio = duenio;
+        this.foto = foto;
+        this.estadoNombre = estadoNombre;
+    }
+
+    public Inmueble(int id, String direccion, int ambientes, String tipo, String uso, int superficie, double latitud, double longitud, double precio, int estado, int propietarioId, String foto) {
         this.id = id;
         this.direccion = direccion;
         this.ambientes = ambientes;
@@ -41,7 +60,7 @@ public class Inmueble implements Serializable {
         this.foto = foto;
     }
 
-    public Inmueble(String direccion, int ambientes, String tipo, String uso, double superficie, String latitud, String longitud, double precio, int estado, int propietarioId, int foto, String archivos) {
+    public Inmueble(String direccion, int ambientes, String tipo, String uso, int superficie, double latitud, double longitud, double precio, int estado, int propietarioId, String foto) {
         this.direccion = direccion;
         this.ambientes = ambientes;
         this.tipo = tipo;
@@ -53,24 +72,40 @@ public class Inmueble implements Serializable {
         this.estado = estado;
         this.propietarioId = propietarioId;
         this.foto = foto;
-        this.archivos = archivos;
+
     }
 
-    public int getFoto() {
+    public Propietario getDuenio() {
+        return duenio;
+    }
+
+    public void setDuenio(Propietario duenio) {
+        this.duenio = duenio;
+    }
+
+    public String getEstadoNombre() {
+        return estadoNombre;
+    }
+
+    public void setEstadoNombre(String estadoNombre) {
+        this.estadoNombre = estadoNombre;
+    }
+
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(int foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 
-    public String getArchivos() {
+/*    public String getArchivos() {
         return archivos;
     }
 
     public void setArchivos(String archivos) {
         this.archivos = archivos;
-    }
+    }*/
 
     public int getId() {
         return id;
@@ -112,27 +147,27 @@ public class Inmueble implements Serializable {
         this.uso = uso;
     }
 
-    public double getSuperficie() {
+    public int getSuperficie() {
         return superficie;
     }
 
-    public void setSuperficie(double superficie) {
+    public void setSuperficie(int superficie) {
         this.superficie = superficie;
     }
 
-    public String getLatitud() {
+    public double getLatitud() {
         return latitud;
     }
 
-    public void setLatitud(String latitud) {
+    public void setLatitud(double latitud) {
         this.latitud = latitud;
     }
 
-    public String getLongitud() {
+    public double getLongitud() {
         return longitud;
     }
 
-    public void setLongitud(String longitud) {
+    public void setLongitud(double longitud) {
         this.longitud = longitud;
     }
 

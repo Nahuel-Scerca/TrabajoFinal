@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -31,6 +30,7 @@ public class PerfilFragment extends Fragment {
         inicializar(root);
         return root;
     }
+
 
     private void inicializar(View view){
         etApellido= view.findViewById(R.id.etApellido);
@@ -57,22 +57,24 @@ public class PerfilFragment extends Fragment {
             public void onChanged(Propietario propietario) {
                 etNombre.setText(propietario.getNombre());
                 etApellido.setText(propietario.getApellido());
-                etPassword.setText(propietario.getPassword());
-                etMail.setText(propietario.getMail());
+                etPassword.setText(propietario.getClave());
+                etMail.setText(propietario.getEmail());
                 etDni.setText(propietario.getDni());
                 etTelefono.setText(propietario.getTelefono());
 
             }
         });
-        vm.recuperarPropietario();
+        Boolean login= getActivity().getIntent().getBooleanExtra("login",false);
+        vm.recuperarPropietario(login);
+        getActivity().getIntent().removeExtra("login");
 
         btEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 etApellido.setEnabled(true);
                 etNombre.setEnabled(true);
-                etPassword.setEnabled(true);
-                etMail.setEnabled(true);
+                //etPassword.setEnabled(true);
+                //etMail.setEnabled(true);
                 etDni.setEnabled(true);
                 etTelefono.setEnabled(true);
                 btEditar.setVisibility(View.GONE);
@@ -86,10 +88,10 @@ public class PerfilFragment extends Fragment {
                 Propietario p = new Propietario();
                 p.setNombre(etNombre.getText().toString());
                 p.setApellido(etApellido.getText().toString());
-                p.setApellido(etPassword.getText().toString());
-                p.setApellido(etMail.getText().toString());
-                p.setApellido(etDni.getText().toString());
-                p.setApellido(etTelefono.getText().toString());
+                p.setClave(etPassword.getText().toString());
+                p.setEmail(etMail.getText().toString());
+                p.setDni(etDni.getText().toString());
+                p.setTelefono(etTelefono.getText().toString());
 
                 etApellido.setEnabled(false);
                 etNombre.setEnabled(false);
@@ -100,6 +102,8 @@ public class PerfilFragment extends Fragment {
 
                 btEditar.setVisibility(View.VISIBLE);
                 btGuardar.setVisibility(View.GONE);
+
+                vm.editarPropietario(p);
             }
         });
     }

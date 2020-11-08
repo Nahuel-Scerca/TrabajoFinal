@@ -57,12 +57,12 @@ public class contrato_unico extends Fragment {
             public void onChanged(Contrato contrato) {
                 tvContratoId.setText("Nº"+contrato.getId() + "");
                 tvDireccion.setText("Ubicado en la calle "+contrato.getInmueble().getDireccion());
-                tvMonto.setText("Mensualmente se abonaran: "+contrato.getMontoAlquiler()+"");
-                tvDesde.setText(contrato.getFechaDesde());
-                tvHasta.setText(contrato.getFechaHasta());
+                tvMonto.setText("Mensualmente se abonaran: "+contrato.getPrecioMensual()+"");
+               /* tvDesde.setText(contrato.getFechaDesde());
+                tvHasta.setText(contrato.getFechaHasta());*/
                 tvInquilino.setText("El Sr/a "+contrato.getInquilino().getNombre() +" "+ contrato.getInquilino().getApellido());
 
-                tvTexto.setText("REUNIDOS por el motivo de Alquiler del Inmueble ubicado en San Luis calle: "+contrato.getInmueble().getDireccion()+" , el cual sera ocupado por el Inquilino "+contrato.getInquilino().getNombre() +" "+ contrato.getInquilino().getApellido()+" a un Monto mensual de "+contrato.getMontoAlquiler()+" Que por VALIDADO el acuerdo de ambas partes el dia de la fecha "+contrato.getFechaDesde()+". Sin mas motivo alguno . ");
+                tvTexto.setText("REUNIDOS por el motivo de Alquiler del Inmueble ubicado en San Luis calle: "+contrato.getInmueble().getDireccion()+" , el cual sera ocupado por el Inquilino "+contrato.getInquilino().getNombre() +" "+ contrato.getInquilino().getApellido()+" a un Monto mensual de "+contrato.getPrecioMensual()+" Que por VALIDADO el acuerdo de ambas partes el dia de la fecha "+contrato.getFechaDesde()+". Sin mas motivo alguno . ");
             }
         });
         contratoViewModel.cargarContrato(getArguments());

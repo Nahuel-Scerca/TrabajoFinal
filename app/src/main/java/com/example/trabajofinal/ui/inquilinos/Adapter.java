@@ -45,8 +45,8 @@ public class Adapter extends ArrayAdapter<Inquilino> {
         TextView nombre= itemView.findViewById(R.id.tvNombre);
         nombre.setText(inquilino.getNombre()+"  "+inquilino.getApellido());
 
-        TextView inmueble= itemView.findViewById(R.id.tvInmueble);
-        inmueble.setText("Inmueble: "+inquilino.getInmueble().getDireccion());
+        /*TextView inmueble= itemView.findViewById(R.id.tvInmueble);
+        inmueble.setText("Inmueble: "+inquilino.getInmueble().getDireccion());*/
 
 
         return itemView;

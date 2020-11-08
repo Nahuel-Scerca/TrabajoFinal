@@ -73,7 +73,7 @@ public class InquilinoFragment extends Fragment {
             }
         });
 
-        vm.cargarDatos();
+        vm.obtenerInquilinos();
 
 
     }

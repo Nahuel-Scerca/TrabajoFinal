@@ -39,7 +39,7 @@ public class ContratoFragment extends Fragment {
     private  ArrayList<Contrato> lista;
     private InmuebleViewModel vm;
     private ContratoViewModel vmc;
-    private List<Contrato>  arrayListContrato;
+    private Contrato  contratoApi;
     ArrayAdapter<Inmueble> adapter;
     Context context;
 
@@ -60,20 +60,19 @@ public class ContratoFragment extends Fragment {
     private void inicializar(View view) {
         lvLista = view.findViewById(R.id.lvLista);
         vmc= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(ContratoViewModel.class);
-        vmc.getContrato().observe(getViewLifecycleOwner(), new Observer<ArrayList>() {
+        vmc.getContrato().observe(getViewLifecycleOwner(), new Observer<Contrato>() {
             @Override
-            public void onChanged(ArrayList arrayList) {
-                arrayListContrato = arrayList;
-                  }
+            public void onChanged(Contrato contrato) {
+                contratoApi = contrato;
+            }
         });
-        vmc.cargarDatos();
 
         vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InmuebleViewModel.class);
 
-        vm.getInmueble().observe(getViewLifecycleOwner(), new Observer<ArrayList>() {
+        vm.getInmueble().observe(getViewLifecycleOwner(), new Observer<List>() {
             @Override
-            public void onChanged(final ArrayList arrayList) {
-                adapter= new ListaAdapter(context,R.layout.item,arrayList,getLayoutInflater());
+            public void onChanged(final List list) {
+                adapter= new ListaAdapter(context,R.layout.item,list,getLayoutInflater());
                 lvLista.setAdapter(adapter);
 
                 lvLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -83,13 +82,12 @@ public class ContratoFragment extends Fragment {
                         Inmueble inmueble = adapter.getItem(i);
                         Log.d("Salida", "eSTE ES EL ID INMUEBELE"+inmueble.getId()+"");
 
-                        for (int it = 0; it < arrayListContrato.size(); it++){
-                            Contrato contrato = arrayListContrato.get(it);
-                            if(inmueble.getId() == contrato.getInmueble().getId()){
-                                bundle.putSerializable("contrato", contrato);
-                            }
 
-                        }
+                        vmc.obtenerContrato(inmueble.getId());
+
+                        Log.d("Contrato","aca llegue  ");
+                        bundle.putSerializable("contrato", contratoApi);
+
 
                         Navigation.findNavController(getActivity(), R.id.nav_host_fragment).navigate(R.id.contrato_unico, bundle);
                     }
@@ -98,7 +96,7 @@ public class ContratoFragment extends Fragment {
             }
         });
 
-        vm.cargarDatos();
+        vm.obtenerInmuebles();
 
 
     }

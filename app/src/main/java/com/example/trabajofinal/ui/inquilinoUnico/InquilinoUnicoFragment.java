@@ -60,7 +60,7 @@ public class InquilinoUnicoFragment extends Fragment {
                 tvTelefono.setText("Telefono: "+inquilino.getTelefono());
                 tvEmail.setText("E-mail: "+inquilino.getEmail());
                 tvDni.setText("Dni: "+inquilino.getDni());
-                tvInmueble.setText("Direccion: "+inquilino.getInmueble().getDireccion());
+               /* tvInmueble.setText("Direccion: "+inquilino.getInmueble().getDireccion());*/
 
 
                 Resources res = getResources();

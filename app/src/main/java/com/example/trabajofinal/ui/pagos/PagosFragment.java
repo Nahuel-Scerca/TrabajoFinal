@@ -69,14 +69,14 @@ public class PagosFragment extends Fragment {
                 arrayListPagos = arrayList;
                     }
         });
-        vmp.cargarDatos();
+        vmp.obtenerPagos();
 
         vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InmuebleViewModel.class);
 
-        vm.getInmueble().observe(getViewLifecycleOwner(), new Observer<ArrayList>() {
+        vm.getInmueble().observe(getViewLifecycleOwner(), new Observer<List>() {
             @Override
-            public void onChanged(final ArrayList arrayList) {
-                adapter= new ListaAdapter(context,R.layout.item,arrayList,getLayoutInflater());
+            public void onChanged(final List list) {
+                adapter= new ListaAdapter(context,R.layout.item,list,getLayoutInflater());
                 lvLista.setAdapter(adapter);
 
                 lvLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -84,6 +84,7 @@ public class PagosFragment extends Fragment {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Bundle bundle = new Bundle();
                         Inmueble inmueble = adapter.getItem(i);
+                        Log.d("ApiPago",inmueble.getDireccion()+"");
 
                         //Lista de Pagos que voy a mandar en el serializable
                         List<Pago> listaDePagos = new ArrayList<>();
@@ -106,7 +107,7 @@ public class PagosFragment extends Fragment {
             }
         });
 
-        vm.cargarDatos();
+        vm.obtenerInmuebles();
 
 
     }

@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Inquilino implements Serializable {
 
     private int id;
-    private String Dni;
+    private String dni;
     private String nombre;
     private String apellido;
     private String email;
@@ -13,45 +13,13 @@ public class Inquilino implements Serializable {
     private String nombreGarante;
     private String telefonoGarante;
     private String DniGarante;
-    private Inmueble inmueble;
+
 
     public Inquilino() {}
 
-    public Inquilino(String dni, String nombre, String apellido) {
-        Dni = dni;
-        this.nombre = nombre;
-        this.apellido = apellido;
-    }
-
-    public Inquilino(String dni, String nombre, String apellido, String telefono) {
-        Dni = dni;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-    }
-
-    public Inquilino(int id, String dni, String nombre, String apellido, String email, String telefono,Inmueble Inmueble) {
+    public Inquilino(int id, String dni, String nombre, String apellido, String email, String telefono, String nombreGarante, String telefonoGarante, String dniGarante) {
         this.id = id;
-        Dni = dni;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.telefono = telefono;
-        this.inmueble= Inmueble;
-    }
-    public Inquilino(int id, String dni, String nombre, String apellido, String email, String telefono) {
-        this.id = id;
-        Dni = dni;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.telefono = telefono;
-
-    }
-
-
-    public Inquilino(String dni, String nombre, String apellido, String email, String telefono, String nombreGarante, String telefonoGarante, String dniGarante) {
-        Dni = dni;
+        this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -61,13 +29,40 @@ public class Inquilino implements Serializable {
         DniGarante = dniGarante;
     }
 
-    public Inmueble getInmueble() {
-        return inmueble;
+    public Inquilino(String dni, String nombre, String apellido) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
     }
 
-    public void setInmueble(Inmueble inmueble) {
-        this.inmueble = inmueble;
+    public Inquilino(String dni, String nombre, String apellido, String telefono) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
     }
+
+    public Inquilino(int id, String dni, String nombre, String apellido, String email, String telefono) {
+        this.id = id;
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.telefono = telefono;
+    }
+
+
+    public Inquilino(String dni, String nombre, String apellido, String email, String telefono, String nombreGarante, String telefonoGarante, String dniGarante) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.telefono = telefono;
+        this.nombreGarante = nombreGarante;
+        this.telefonoGarante = telefonoGarante;
+        DniGarante = dniGarante;
+    }
+
 
     public int getId() {
         return id;
@@ -78,11 +73,11 @@ public class Inquilino implements Serializable {
     }
 
     public String getDni() {
-        return Dni;
+        return dni;
     }
 
     public void setDni(String dni) {
-        Dni = dni;
+        this.dni = dni;
     }
 
     public String getNombre() {

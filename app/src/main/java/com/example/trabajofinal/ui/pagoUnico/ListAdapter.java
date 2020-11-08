@@ -5,14 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.trabajofinal.R;
-import com.example.trabajofinal.modelo.Inmueble;
 import com.example.trabajofinal.modelo.Pago;
 
 import java.util.List;
@@ -45,7 +43,7 @@ public class ListAdapter extends ArrayAdapter<Pago> {
         numContrato.setText(pago.getNumero()+"");
 
         TextView monto= itemView.findViewById(R.id.tvMonto);
-        monto.setText(pago.getContrato().getMontoAlquiler()+"");
+        monto.setText(pago.getContrato().getPrecioMensual()+"");
 
         TextView inquilino = itemView.findViewById(R.id.tvInquilino);
         inquilino.setText("El Inquilino/a "+pago.getContrato().getInquilino().getNombre()+" "+pago.getContrato().getInquilino().getApellido());

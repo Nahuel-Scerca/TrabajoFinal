@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 
+import com.bumptech.glide.Glide;
 import com.example.trabajofinal.R;
 import com.example.trabajofinal.modelo.Inmueble;
 
@@ -48,18 +50,26 @@ public class ListaAdapter extends ArrayAdapter<Inmueble> {
         Inmueble inmueble= lista.get(position);
         ImageView foto = itemView.findViewById(R.id.ivPerfil);
 
-        Resources res = context.getResources();
+     /*   Resources res = context.getResources();
         Bitmap src = BitmapFactory.decodeResource(res, inmueble.getFoto());
         RoundedBitmapDrawable dr = RoundedBitmapDrawableFactory.create(res, src);
         dr.setCornerRadius(100.0f);
-        foto.setImageDrawable(dr);
+        foto.setImageDrawable(dr);*/
+
+    // .trim porque por alguna razon me insertaba espacios y el path se me le sumaba %20%20%20...
+     Glide.with(context)
+                .load("http://192.168.0.14:45455/Uploads/"+inmueble.getFoto().trim())
+                .placeholder(R.drawable.ic_launcher_background)
+                .fitCenter()
+                .into(foto);
 
 
         TextView direccion= itemView.findViewById(R.id.tv1);
         direccion.setText("Direccion: "+ inmueble.getDireccion());
 
         TextView precio = itemView.findViewById(R.id.tv2);
-        precio.setText("Monto: $ "+inmueble.getPrecio());
+        precio.setText("Monto: $ "+ inmueble.getPrecio());
+
 
         TextView tipo = itemView.findViewById(R.id.tv3);
         tipo.setText("Tipo: "+inmueble.getTipo());

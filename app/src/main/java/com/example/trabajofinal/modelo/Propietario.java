@@ -2,19 +2,29 @@ package com.example.trabajofinal.modelo;
 
 public class Propietario {
 
-    private int idPropietario;
+    private int id;
     private String nombre;
     private String apellido;
-    private String mail;
-    private String password;
+    private String email;
+    private String clave;
     private String dni;
     private String telefono;
 
-    public Propietario(String nombre, String apellido, String mail, String password, String dni, String telefono) {
+    public Propietario(String nombre, String apellido, String email, String clave, String dni, String telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.mail = mail;
-        this.password = password;
+        this.email = email;
+        this.clave = clave;
+        this.dni = dni;
+        this.telefono = telefono;
+    }
+
+    public Propietario(int id, String nombre, String apellido, String email, String clave, String dni, String telefono) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.clave = clave;
         this.dni = dni;
         this.telefono = telefono;
     }
@@ -22,12 +32,12 @@ public class Propietario {
     public Propietario() {
     }
 
-    public int getIdPropietario() {
-        return idPropietario;
+    public int getId() {
+        return id;
     }
 
-    public void setIdPropietario(int id) {
-        this.idPropietario = id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -46,20 +56,20 @@ public class Propietario {
         this.apellido = apellido;
     }
 
-    public String getMail() {
-        return mail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getClave() {
+        return clave;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
     public String getDni() {
